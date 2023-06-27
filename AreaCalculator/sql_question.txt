@@ -1,1 +1,15 @@
-//
+CREATE TABLE Products (id INT NOT NULL IDENTITY(1,1) PRIMARY KEY, name VARCHAR(50) NOT NULL)
+CREATE TABLE Categories (id INT NOT NULL IDENTITY(1,1) PRIMARY KEY, name VARCHAR(50) NOT NULL)
+CREATE TABLE Assortment (product_id INT NOT NULL, category_id INT NOT NULL,PRIMARY KEY (product_id, category_id),
+                                   FOREIGN KEY (product_id) REFERENCES Products (id),
+                                   FOREIGN KEY (category_id) REFERENCES Categories (id))
+
+INSERT INTO Products values ('toster'), ('drill'), ('knife'), ('saw');
+INSERT INTO Categories values ('kitchen'), ('electrical');
+INSERT INTO Assortment values (1, 1), (1, 2), (3, 1), (2, 2);
+
+
+SELECT P.name as Product_Name, C.name as Category_Name 
+FROM Products P 
+LEFT JOIN Assortment A ON P.id = A.product_id 
+LEFT JOIN Categories C ON C.id = A.category_id
