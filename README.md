@@ -10,4 +10,4 @@ Test project with area calculation library
 4. Легкость добавления фигуры обеспечивается простотой нааследования от интерфейса IBaseFigure.cs и реализацией его методов в новой фигуре.
 
 # Вопрос №2
-Реализация схемы и запроса к вопросу №2 находятся в файле sql_question.txt в AreaCalculator  
+Реализация примера схемы и запроса к вопросу №2 находятся в файле sql_question.txt в AreaCalculator  
